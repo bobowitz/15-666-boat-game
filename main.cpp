@@ -4,6 +4,8 @@
 //The 'PongMode' mode plays the game:
 #include "PongMode.hpp"
 
+#include "BoatMode.hpp"
+
 //GL.hpp will include a non-namespace-polluting set of opengl prototypes:
 #include "GL.hpp"
 
@@ -47,9 +49,9 @@ int main(int argc, char **argv) {
 
 	//create window:
 	SDL_Window *window = SDL_CreateWindow(
-		"gp20 pong", //TODO: remember to set a title for your game!
+		"boat", //TODO: remember to set a title for your game!
 		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-		640, 480, //TODO: modify window size if you'd like
+		624, 960, //TODO: modify window size if you'd like
 		SDL_WINDOW_OPENGL
 		| SDL_WINDOW_RESIZABLE //uncomment to allow resizing
 		| SDL_WINDOW_ALLOW_HIGHDPI //uncomment for full resolution on high-DPI screens
@@ -83,11 +85,13 @@ int main(int argc, char **argv) {
 		}
 	}
 
+	Sound::init();
+
 	//Hide mouse cursor (note: showing can be useful for debugging):
 	//SDL_ShowCursor(SDL_DISABLE);
 
 	//------------ create game mode + make current --------------
-	Mode::set_current(std::make_shared< PongMode >());
+	Mode::set_current(std::make_shared< BoatMode >());
 
 	//------------ main loop ------------
 
@@ -168,6 +172,8 @@ int main(int argc, char **argv) {
 
 
 	//------------  teardown ------------
+
+	Sound::shutdown();
 
 	SDL_GL_DeleteContext(context);
 	context = 0;

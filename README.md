@@ -1,8 +1,8 @@
-# (TODO: your game's title)
+# Boat
 
-Author: (TODO: your name)
+Author: Alton Olson
 
-Design: (TODO: In two sentences or fewer, describe what is new and interesting about your game.)
+Design: The game combines rotation/thrust controls with momentum (similar to Asteroids) with an infinite-runner obstacle avoiding challenge (similar to Helicopter/Flappy Bird).
 
 Screen Shot:
 
@@ -10,6 +10,6 @@ Screen Shot:
 
 How To Play:
 
-(TODO: describe the controls and (if needed) goals/strategy.)
+Arrow keys to move (L/R rotates, U/D thrust forward and backward). Avoid the river banks, you can hit the boxes but not the bombs, and don't get left behind by the camera. My high score is 786m :).
 
 This game was built with [NEST](NEST.md).
